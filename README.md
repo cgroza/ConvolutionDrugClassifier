@@ -15,12 +15,10 @@ Accumulating a good data set is very difficult. Therefore, fitting will be done 
 
 Confusion matrix
 
-|-----------|----------|-----------|
 |           | Sedative | Stimulant |
 |-----------|----------|-----------|
 | Sedative  |        8 |         2 |
-|-----------|----------|-----------|
-| Stimulant |     1    |        14 |
+| Stimulant |        1 |        14 |
 
 Training Accuracy = 0.908
 Testing Accuracy = 0.88
