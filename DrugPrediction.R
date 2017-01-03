@@ -62,7 +62,7 @@ sedatives = sdfTo3dArray(sedativesSDFs, arrayWidth, 0)
 drugMatrix = abind(stimulants, sedatives, along=3)
 
 ## Set seed for number generator. Ensures repeatable results.
-set.seed(1)
+set.seed(5)
 
 dataSize = length(drugMatrix[1,1,])
 
