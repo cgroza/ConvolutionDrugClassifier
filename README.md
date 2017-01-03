@@ -13,7 +13,7 @@ Accumulating a good data set is very difficult. Therefore, fitting will be done 
 
 # Results
 
-Confusion matrix
+Confusion matrix of predicted classes versus actual classes.
 
 |           | Sedative | Stimulant |
 |-----------|----------|-----------|
