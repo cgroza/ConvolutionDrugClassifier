@@ -84,9 +84,13 @@ trainingY = trainingSet[1,1,]
 testingX = testingSet[,-1,]
 testingY = testingSet[1,1,]
 
-## mxnet requires a 4D input array?
-dim(trainingX) = c(4, 59, 1, 98)
-dim(testingX) = c(4, 59, 1, 25)
+## Requires a 4D input array with every 3D volume being an individual example.
+## The input to the CNN is not a surface but a volume, since this was originally
+## intended for recognition of images that have a X, Y and RGB dimensions. Since
+## our dimensions are atom and position (XYZ), we must use a dummy empty
+## dimension of size 1 in order adapt it to the CNN architecture.
+dim(trainingX) = c(4, dim(trainingX)[2], 1, dim(trainingX)[3])
+dim(testingX) = c(4, dim(testingX)[2], 1, dim(testingX)[3])
 
 data <- mx.symbol.Variable('data')
 # 1st convolutional layer
@@ -129,11 +133,10 @@ model <- mx.model.FeedForward.create(NN_model,
                                      epoch.end.callback = mx.callback.log.train.metric(100))
 
 ## Convert output probability matrix for each feature into list of labeled data.
-
 predictProbs <- predict(model, testingX)
 predictedLabels <- max.col(t(predictProbs)) - 1
 
 ## Evaluate accuracy from a confusion table.
 confusionTable = table(predictedLabels, testingY)
-accuracy = sum(diag(confusionTable))/25
+accuracy = sum(diag(confusionTable))/length(testingY)
 accuracy
