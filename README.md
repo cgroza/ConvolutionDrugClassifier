@@ -21,7 +21,9 @@ Confusion matrix of predicted classes versus actual classes.
 | Stimulant |        1 |        14 |
 
 Training Accuracy = 0.908
-Testing Accuracy = 0.88
+
+Testing Accuracy = 0.88 (this value varies depending how the data is shuffled).
+
 Expected accuracy from guessing = 0.64 (due to imbalanced data set)
 
 However, this varies depending on the distribution of training and testing data.
@@ -29,5 +31,5 @@ Accuracy can go as high as 96% when the random number generator seed is set to
 1.
 
 # Authors
-Cristian Groza
-Alexei Nolin-Lapalme
+- Cristian Groza
+- Alexei Nolin-Lapalme
