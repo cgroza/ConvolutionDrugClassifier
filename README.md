@@ -1,7 +1,7 @@
 # Goal
 
 Using a convolutional neural network designed for image recognition to
-classify drugs from SDF structural data. This data species the 3D
+classify drugs from SDF structural data. This data specifies the 3D
 position of every atom in a molecule.
 
 The two classes to be distinguished are stimulants and sedatives.
